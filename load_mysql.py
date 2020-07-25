@@ -23,7 +23,7 @@ database_connection = sqlalchemy.create_engine('mysql+mysqlconnector://{0}:{1}@{
 
 mypath='dados/'
 
-for tablename in listdir(mypath)
+for tablename in listdir(mypath):
     print(tablename)
 onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
 """"

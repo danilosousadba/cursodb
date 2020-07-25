@@ -4,7 +4,6 @@ import pandas as pd
 from os import listdir
 from os.path import isfile, join
 from pandas.io import sql
-import MySQLdb
 
 database_username = 'root'
 database_password = 'aluno'

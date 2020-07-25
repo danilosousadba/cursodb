@@ -5,8 +5,8 @@ COPY load_mysql.py .
 COPY requirements.txt .
 
 RUN apt-get update && apt-get install -y \
-    python-pip
+    python3 python3-pip
 
-RUN pip install -r requirements.txt
+RUN python3 -m pip install -r requirements.txt
 
-CMD python load_mysql.py
+CMD python3 load_mysql.py

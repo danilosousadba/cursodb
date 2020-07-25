@@ -9,6 +9,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: aluno
+      MYSQL_DATABASE: curso
     ports:
       - 3306:3306
   adminer:

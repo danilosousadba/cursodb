@@ -1,0 +1,6 @@
+PyMySQL
+pandas
+pymysql
+os
+create_engine
+sqlalchemy

@@ -12,7 +12,7 @@ import sqlalchemy
 database_username = 'root'
 database_password = 'aluno'
 database_ip       = 'localhost'
-database_name     = 'curso'
+database_name     = 'mysql'
 database_connection = sqlalchemy.create_engine('mysql+mysqlconnector://{0}:{1}@{2}/{3}'.
                                                format(database_username, database_password,
                                                       database_ip, database_name))
@@ -24,7 +24,7 @@ for tablename in listdir(mypath):
     print(tablename)
     print(tablename.split('.')[0])
     tableName   = tablename
-    dataFrame   = pd.read_csv('{}{}'.format(mypath,tablename))
+    dataFrame   = pd.read_csv(index=false,'{}{}'.format(mypath,tablename))
     dbConnection    = database_connection.connect()
 
     try:

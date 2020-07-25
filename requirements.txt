@@ -1,3 +1,4 @@
 PyMySQL
 pandas
 sqlalchemy
+mysql-connector

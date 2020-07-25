@@ -1,5 +1,5 @@
 # Use root/example as user/password credentials
-version: '3.1'
+version: '3.8'
 
 services:
 
@@ -12,6 +12,18 @@ services:
       MYSQL_DATABASE: curso
     ports:
       - 3306:3306
+    healthcheck:
+      test: "/usr/bin/mysql --user=root --password=aluno --execute \"SHOW DATABASES;\""
+      interval: 2s
+      timeout: 10s
+      retries: 10
+
+  dbscript:
+    image: postdb
+    restart: always
+    depends_on:
+      - db
+
   adminer:
     image: adminer
     restart: always

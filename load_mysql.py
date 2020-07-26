@@ -11,7 +11,7 @@ import time
 
 database_username = 'root'
 database_password = 'aluno'
-database_ip       = 'db'
+database_ip       = 'localhost'
 database_name     = 'curso'
 database_connection = sqlalchemy.create_engine('mysql+mysqlconnector://{0}:{1}@{2}/{3}'.
                                                format(database_username, database_password,
@@ -21,7 +21,7 @@ attempts = 0
 while attempts < 10 :
     try:
         dbConnection    = database_connection.connect()
-        sleep(5)
+        time.sleep(5)
     except Exception as e:
         attempts += 1
         print (e)
@@ -32,7 +32,7 @@ for tablename in listdir(mypath):
     print(tablename.split('.')[0])
     tableName   = tablename
     dataFrame   = pd.read_csv(mypath+tablename,index_col=False)
-
+    dbConnection    = database_connection.connect()
     try:
         dataFrame.to_sql(tablename.split('.')[0], dbConnection, if_exists='replace');
 

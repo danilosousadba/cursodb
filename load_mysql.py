@@ -16,14 +16,13 @@ database_name     = 'curso'
 database_connection = sqlalchemy.create_engine('mysql+mysqlconnector://{0}:{1}@{2}/{3}'.
                                                format(database_username, database_password,
                                                       database_ip, database_name))
-#attempts = 0
-#while attempts < 10 :
+
 print("Aguardando Startup do banco" )
-time.sleep(20)
+time.sleep(60)
+
 try:
     dbConnection    = database_connection.connect()
 except Exception as e:
-    attempts += 1
     print (e)
 
 mypath='dados/'

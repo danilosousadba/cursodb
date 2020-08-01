@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM mysql
 
 COPY dados/ /dados/
 

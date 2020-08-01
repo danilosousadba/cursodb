@@ -4,7 +4,7 @@ version: '3.8'
 services:
 
   db:
-    image: mysql
+    build: .
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
@@ -18,12 +18,12 @@ services:
       timeout: 10s
       retries: 10
 
-  dbscript:
-    build: .
-    restart: always
-    depends_on:
-      - db
-    command: ["python3", "load_mysql.py"]
+  #dbscript:
+  #  build: .
+  #  restart: always
+  #  depends_on:
+  #    - db
+  #  command: ["python3", "load_mysql.py"]
     #command: ["./wait-for-it.sh", "db", "--", "python3", "load_mysql.py"]
 
   adminer:
